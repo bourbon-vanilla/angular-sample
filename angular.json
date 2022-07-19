@@ -31,7 +31,8 @@
               "angular-solution-app/src/assets"
             ],
             "styles": [
-              "angular-solution-app/src/styles.scss"
+              "angular-solution-app/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           },
