@@ -2,9 +2,24 @@
 
 ## Project info
 
-The bootstrap.css was added in `angular.json`.
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17.
+
+Bootstrap installed
+
+```bash
+npm install bootstrap
+```
+
+and afterwards the bootstrap.css was added in `angular.json`.
+
+Then ng-bootrap was installed
+
+```bash
+ng add @ng-bootstrap/ng-bootstrap
+```
+Package link:
+
+* https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap
 
 ## Development server
 
