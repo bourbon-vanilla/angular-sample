@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { DevicesService } from './services/devices.service';
 import { IDevice } from './services/idevice';
 
@@ -10,15 +11,19 @@ import { IDevice } from './services/idevice';
 })
 export class DevicesComponent implements OnInit {
 
-  devices!: IDevice[];
-
+  devices: IDevice[] = [];
+  getDevicesSub!: Subscription;
 
   constructor(private devicesService: DevicesService) { }
 
 
   ngOnInit(): void {
-    this.devices = this.devicesService
-      .GetDevices();
+    this.getDevicesSub = this.devicesService
+      .GetDevices()
+      .subscribe(
+        device => this.devices.push(device),
+        err => console.log(err),
+        () => this.getDevicesSub.unsubscribe());
   }
 
 }
