@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { DevicesRoutingModule } from './devices-routing.module';
-import { DevicesServiceMock } from './devices-service.mock';
-import { DevicesService } from './devices.service';
+import { DevicesServiceMock } from './services/devices-service.mock';
+import { DevicesService } from './services/devices.service';
 
 
 @NgModule({

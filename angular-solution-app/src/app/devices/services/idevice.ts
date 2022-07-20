@@ -5,7 +5,7 @@ export interface IDevice {
 }
 
 export enum DeviceStatus {
-    stopped,
-    running,
-    faulted
+    STP = "STOPPED",
+    RUN = "RUNNING",
+    FLT = "FAULTED"
 }
