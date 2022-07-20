@@ -5,7 +5,10 @@ import { PreloadModulesStrategy } from './core/strategies/preload-modules.stryte
 
 
 const app_routes: Routes = [
-  { path: 'devices', loadChildren: () => import('./devices/devices.module').then(m => m.DevicesModule) }
+  { path: '', pathMatch: 'full', redirectTo: '/welcome'},
+  { path: 'welcome', loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule) },
+  { path: 'devices', loadChildren: () => import('./devices/devices.module').then(m => m.DevicesModule) },
+  { path: '**', pathMatch: 'full', redirectTo: '/welcome' }
 ];
 
 @NgModule({
