@@ -1,10 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { DevicesRoutingModule } from './devices-routing.module';
+import { DevicesServiceMock } from './devices-service.mock';
+import { DevicesService } from './devices.service';
 
 
 @NgModule({
   declarations: [ DevicesRoutingModule.components ],
-  imports: [ DevicesRoutingModule ]
+  imports: [ CommonModule, DevicesRoutingModule ],
+  providers: [
+    { provide: DevicesService, useClass: DevicesServiceMock }
+  ]
 })
 export class DevicesModule { }

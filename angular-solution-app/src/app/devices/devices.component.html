@@ -1,3 +1,21 @@
 <div class="m-3">
-    <h3>Devices Component Works !</h3>
+    <h3>Devices Component</h3>
 </div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Pos</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dev of devices; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{dev.name}}</td>
+        <td>{{dev.type}}</td>
+        <td>{{dev.state}}</td>
+      </tr>
+    </tbody>
+  </table>
