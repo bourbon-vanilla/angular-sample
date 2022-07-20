@@ -1,6 +1,9 @@
 <div class="container">
   <h1>Sample Page</h1>
-  <button type="button" class="btn btn-primary">Primary</button>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" (click)="navigateToHome()">Go Home</button>
+    <button type="button" class="btn btn-primary" (click)="navigateToDevices()">Open Devices</button>
+  </div>
 </div>
 <div class="container">
   <router-outlet></router-outlet>
