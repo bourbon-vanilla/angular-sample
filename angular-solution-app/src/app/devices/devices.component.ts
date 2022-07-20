@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { DevicesService } from './services/devices.service';
 import { IDevice } from './services/idevice';
@@ -9,10 +9,11 @@ import { IDevice } from './services/idevice';
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.scss']
 })
-export class DevicesComponent implements OnInit {
+export class DevicesComponent implements OnInit, OnDestroy {
 
   devices: IDevice[] = [];
   getDevicesSub!: Subscription;
+
 
   constructor(private devicesService: DevicesService) { }
 
@@ -22,8 +23,15 @@ export class DevicesComponent implements OnInit {
       .GetDevices()
       .subscribe(
         device => this.devices.push(device),
-        err => console.log(err),
-        () => this.getDevicesSub.unsubscribe());
+        err => console.log(err));
+  }
+
+  ngOnDestroy(): void {
+    if (this.getDevicesSub)
+    {
+      this.getDevicesSub.unsubscribe();
+      console.log("The observable-substcription 'getDevicesSub' was successfully unsubscribed");
+    }
   }
 
 }
