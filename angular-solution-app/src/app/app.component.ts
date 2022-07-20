@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,13 +11,14 @@ export class AppComponent {
 
   title = 'angular-solution-app';
 
+
   constructor(private router: Router) { }
 
-  navigateToHome(){
-    this.router.navigateByUrl('/');
+
+  navigateTo(route: string) {
+    var localRoute = route.startsWith('/') ? 
+      route : '/' + route;
+    this.router.navigateByUrl(localRoute);
   }
 
-  navigateToDevices(){
-    this.router.navigateByUrl('/devices');
-  }
 }
