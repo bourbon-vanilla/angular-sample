@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CoreModule } from './core/core.module';
     // LoggingModule,   // Has to be added here as "Eager loaded" since we may need to go here right away as browser loads based on route user enters
     AppRoutingModule,   // Main routes for the application
     NgbModule,          // ng-bootstrap
-    CoreModule          // Singleton objects (services, components that are loaded only once etc.)
+    CoreModule,         // Singleton objects (services, components that are loaded only once etc.)
+    SharedModule        // Shared (multi-instance) objects
   ],
   providers: [],
   bootstrap: [AppComponent]
