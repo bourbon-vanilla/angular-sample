@@ -2,14 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
-  templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  template: `
+    <div class="m-3">
+      <h3>Welcome Component</h3>
+    </div>
+  `
 })
 export class WelcomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

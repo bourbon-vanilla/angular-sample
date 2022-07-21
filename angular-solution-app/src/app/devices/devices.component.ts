@@ -6,8 +6,7 @@ import { IDevice } from './services/idevice';
 
 @Component({
   selector: 'app-devices',
-  templateUrl: './devices.component.html',
-  styleUrls: ['./devices.component.scss']
+  templateUrl: './devices.component.html'
 })
 export class DevicesComponent implements OnInit, OnDestroy {
 
