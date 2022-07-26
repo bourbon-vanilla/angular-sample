@@ -25,6 +25,17 @@ Package link:
 
 ## Run - Details
 
+
+### Docker
+
+```bash
+# To build a docker image for this angular application run:
+docker build -t account/devices-hub-image:latest . 
+
+# To spin a container up from the created image run:
+docker run -d -p 8080:80 --name devices-hub account/devices-hub-image:latest
+```
+
 ### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
