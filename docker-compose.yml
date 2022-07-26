@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+
+  book-monkey:  
+    container_name: devices-hub
+    hostname: devices-hub
+    image: account/devices-hub-image:latest
+    build: .
+    ports:  
+      - 8080:80  
